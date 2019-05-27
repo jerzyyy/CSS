@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' lang="fr">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Recette Spéculos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <style>
+       body{
+          padding: 20px;
+          background-image:url(Jerzy_java/CSS/nappe.jpg);
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 16px;
+          line-height: 1.4;
+          
+       }
+       main{
+           border: 1px solid grey;
+           background-color: white;
+           padding: 20px;
+           max-width: 800px;
+           margin: auto;
+
+       }
+       h1{
+           font-family: Helvetica, Arial, sans-serif;
+           line-height: 1.15;
+           border:1px solid #ff827c;
+           padding:20px;
+           margin-top:0px;
+           text-align: center;
+       }
+       h2{
+        border-bottom:1px solid #ff827c;
+        padding-bottom: 10px;
+        width:50%;
+        margin-top: 40px;
+    
+           
+       }
+       h3{
+           margin-top:0px;
+       }
+       img{
+           float: right;
+           width: 40%;
+           margin-top:5%;
+           margin-bottom: 5%;
+
+       }
+       div{
+           clear:right;
+           columns: 2;
+           margin-bottom:40px;
+       }
+       ul{
+           page-break-inside: avoid;
+       }
+       table{
+           width:100%;
+           margin-top: 40px;
+           margin-bottom:40px;
+       }
+       td{
+           font-family: Arial, Helvetica, sans-serif;
+           font-weight: bold;
+           color: #ff423c;
+           font-size: 30px;
+           text-align: center;
+       }
+       input{
+           width: 3em;
+           text-align:right;
+       }
+   </style>
+</head>
+
+
+<body>
+        <main>
+                <h1>Recette tiramisu poires spéculoos</h1>
+                
+                <p>Comme c'est bientôt l’automne, je vous propose la recette d'un tiramisu parfumé aux poires et aux spéculoos.
+                    J’espère que ces saveurs vous plairont, autant qu’elles m’ont plu !</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Catégorie</th>
+                            <th>Durée</th>
+                            <th>Niveau</th>
+                            <th>Budget</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dessert</td>
+                            <td>30 min</td>
+                            <td>Facile</td>
+                            <td>Bon marché</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <img src="Jerzy_java/CSS/tiramisu.jpg" alt="image de tiramisu">
+            
+                <h2>Ingrédients (pour ~10 verrines)</h2>
+            
+                <ul>
+                    <li><span data-value="1"></span> grosse boîte de poires au sirop</li>
+                    <li>Spéculoos (moins d'un paquet)</li>
+                    <li>250g de Mascarpone</li>
+                    <li><span data-value="3"></span> oeufs</li>
+                    <li>100g de sucre</li>
+                    <li>1 sachet de sucre vanillé</li>
+                </ul>
+
+                <p>Multiplier les quantité par <input type="number" value="2"></p>
+            
+                <h2>Préparation</h2>
+                <div>
+                        <h3>Étape 1 : les poires</h3>
+            
+                        <ul>
+                            <li>Mettre de côté le sirop des poires.</li>
+                        </ul>
+                    
+                        <h3>Étape 2 : la crème</h3>
+                    
+                        <ul>
+                            <li>Casser les oeufs en séparant les blancs des jaunes.</li>
+                            <li>Monter les blancs en neige en y ajoutant un peu de sel et les mettre de côté.</li>
+                            <li>Battre les jaunes d'oeufs puis y ajouter le sucre et le sucre vanillé.</li>
+                            <li>Bien mélanger puis incorporer le mascarpone et mélanger.</li>
+                            <li>Enfin, ajouter les blancs montés en neige et mélanger jusqu'à ce que la crème soit lisse et homogène.</li>
+                        </ul>
+                    
+                        <h3>Étape 3 : le montage</h3>
+                        <ul>
+                            <li>Tremper un spéculoos découpé à la taille de la verrine dans le sirop puis le placer au fond.</li>
+                            <li>Recouvrir de crème (environ 2 cm).</li>
+                            <li>Disposer une couche de morceaux de poires sur la crème</li>
+                            <li>Remettre un spéculoos trempé dans le sirop, puis une couche de crème puis une couche de poires.</li>
+                            <li>Emietter un spéculoos sur le dessus pour faire joli !</li>
+                        </ul>
+                </div>
+                
+            
+                <p><em>Bon appétit !</em> </p>
+                <p><strong>Thomas.</strong></p>
+         </main>
+         <script>
+            (function () {
+                const input = document.getElementsByTagName("input")[0];
+                const spanList = Array.from(document.getElementsByTagName("span"));
+                function updateQuantity() {
+                    spanList.forEach(function(span) {
+                        span.innerHTML = parseInt(span.getAttribute('data-value'), 10) * parseInt(input.value, 10);
+                    });
+                }
+                input.addEventListener("input", updateQuantity);
+                updateQuantity();
+            })();
+         </script>
+    </body>
+
+</html>
